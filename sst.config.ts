@@ -24,6 +24,7 @@ export default {
         runtime: "nodejs18.x",
         edge: true,
         path: "apps/web",
+        // remove this line and the build will work
         customDomain: "test.acme.io",
       });
 
