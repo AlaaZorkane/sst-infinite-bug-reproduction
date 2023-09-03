@@ -20,12 +20,27 @@ export default {
   },
   stacks(app) {
     app.stack(function Site({ stack }) {
+      const isPreview = stack.stage === "kid";
+      const isStaging = stack.stage === "law";
+
+      let domain = "sunny";
+
+      // TODO: use a better random id or build hash
+      const randomId = Math.random().toString(36).slice(2, 12);
+
+      if (isPreview) {
+        domain = `kid-${domain}-${randomId}`;
+      } else if (isStaging) {
+        domain = `law-${domain}`;
+      }
+
       const site = new NextjsSite(stack, "site", {
         runtime: "nodejs18.x",
         edge: true,
         path: "apps/web",
-        // remove this line and the build will work
-        customDomain: "test.acme.io",
+        customDomain: {
+          domainName: `${randomId}.acme.io`,
+        },
       });
 
       stack.addOutputs({
