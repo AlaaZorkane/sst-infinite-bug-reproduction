@@ -1,0 +1,13 @@
+{
+  "name": "ui",
+  "version": "0.0.0",
+  "main": "./index.tsx",
+  "types": "./index.tsx",
+  "license": "MIT",
+  "scripts": {},
+  "devDependencies": {
+    "react": "^18.2.0",
+    "@acme/tsconfig": "workspace:*",
+    "typescript": "^4.5.2"
+  }
+}

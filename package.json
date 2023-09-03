@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "repro",
+  "scripts": {
+    "sst:build": "sst build"
+  },
+  "devDependencies": {
+    "@acme/tsconfig": "workspace:*",
+    "sst": "latest",
+    "aws-cdk-lib": "2.91.0",
+    "constructs": "10.2.69"
+  },
+  "packageManager": "pnpm@8.6.12",
+  "dependencies": {}
+}
